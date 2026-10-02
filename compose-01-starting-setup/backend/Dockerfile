@@ -2,7 +2,7 @@ FROM node
 
 WORKDIR /app
 
-COPY package.json ./
+COPY package.json .
 
 RUN npm install
 
@@ -10,7 +10,7 @@ COPY . .
 
 EXPOSE 80
 
-ENV MONGO_USER=max
-ENV MONGO_PASSWORD=secret123 
+ENV MONGODB_USERNAME=root
+ENV MONGODB_PASSWORD=secret
 
 CMD ["npm", "start"]
