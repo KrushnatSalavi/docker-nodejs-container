@@ -14,6 +14,7 @@ services:
 
   backend:
     build: ./backend
+
     ports:
       - "5000:80"
 
@@ -30,3 +31,20 @@ services:
       - mongodb
 
   frontend:
+    build: ./frontend
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - ./frontend/src:/app/src
+
+    stdin_open: true
+    tty: true
+
+    depends_on:
+      - backend
+
+volumes:
+  data:
+  logs:
