@@ -23,6 +23,8 @@ services:
       - ./backend:/app
       - /app/node_modules
 
+    container_name: mongodb
+
     environment:
       MONGO_INITDB_ROOT_USERNAME: max
       MONGO_INITDB_ROOT_PASSWORD: secret
