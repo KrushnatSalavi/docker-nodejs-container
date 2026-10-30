@@ -16,4 +16,7 @@ spec:
     spec:
       containers:
         - name: second-node
-          image: node-app/second-app:2
+          image: deployment/second-app:latest
+          imagePullPolicy: IfNotPresent
+          ports:  
+            - containerPort: 8080
