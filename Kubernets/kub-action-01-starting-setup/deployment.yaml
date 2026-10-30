@@ -1,2 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
+metadata: 
+  name: second-app
+spec: 
+  replicas: 3
+  template: 
+    metadata: 
+      labels:
+        app: second-app
+    spac:
+      container:
+        - name: second-node
+          image: node-app/second-app:2
