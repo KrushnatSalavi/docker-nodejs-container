@@ -4,11 +4,16 @@ metadata:
   name: second-app
 spec: 
   replicas: 3
+  selector :
+    matchLabels:
+      app: second-app
+      tier: backend
   template: 
     metadata: 
       labels:
         app: second-app
-    spac:
-      container:
+        tier: backend
+    spec:
+      containers:
         - name: second-node
           image: node-app/second-app:2
