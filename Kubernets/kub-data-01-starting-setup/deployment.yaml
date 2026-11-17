@@ -14,4 +14,7 @@ spec:
     spec:
       containers:
         - name: story
-          image: krushnatsalavi/kube-data-demo
+          image: krushnatsalavi/kube-data-demo:1
+      volumes:
+        - name: story-volume
+          emptyDir: {}
