@@ -15,6 +15,11 @@ spec:
       containers:
         - name: story
           image: krushnatsalavi/kube-data-demo:1
+          volumeMounts:
+            - mountPath: /app/story
+              name: story-volume
       volumes:
         - name: story-volume
-          emptyDir: {}
+          hostPath:
+            path: /data
+            type: DirectoryOrCreate
