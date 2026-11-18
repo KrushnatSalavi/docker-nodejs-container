@@ -17,7 +17,10 @@ spec:
           image: krushnatsalavi/kube-data-demo:2
           env:
             - name: STORY_FOLDER
-              value: 'story'
+              valueFrom:
+                configMapKeyRef:
+                  name: story-config
+                  key: STORY_FOLDER
           volumeMounts:
             - mountPath: /app/story
               name: story-volume
