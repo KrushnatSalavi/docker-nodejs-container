@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: users
-          image: krushnatsalavi/kube-network-demo:1
-          ports:
-            - containerPort: 8080
+          image: krushnatsalavi/kube-user
+        - name: auth
+          image: krushnatsalavi/kube-auth

@@ -23,8 +23,8 @@ app.post("/signup", async (req, res) => {
   }
 
   try {
-    // const hashedPW = await axios.get('http://auth/hashed-password/' + password);
-    const hashedPW = "dummy-hashed-password";
+    const hashedPW = await axios.get(`http://${process.env.AUTH_ADDRESS}/hashed-password/${password}`);
+    // const hashedPW = "dummy-hashed-password";
 
     // since it's a dummy service, we don't really care for the hashed-pw either
     console.log(hashedPW, email);
@@ -55,11 +55,11 @@ app.post("/login", async (req, res) => {
 
   // normally, we'd find a user by email and grab his/ her ID and hashed password
   const hashedPassword = password + "_hash";
-  // const response = await axios.get(
-  //   "http://auth/token/" + hashedPassword + "/" + password,
-  // );
+  const response = await axios.get(
+    `http://${process.env.AUTH_ADDRESS}/token/${hashedPassword}/${password}`
+  );
 
-  const response = {status: 200, data: { token: "dummy-token"}};
+  // const response = {status: 200, data: { token: "dummy-token"}};
 
   if (response.status === 200) {
     return res.status(200).json({ token: response.data.token });
