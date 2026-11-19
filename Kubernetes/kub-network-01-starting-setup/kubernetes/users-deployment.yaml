@@ -17,6 +17,6 @@ spec:
           image: krushnatsalavi/kube-user
           env:
             - name: AUTH_ADDRESS
-              value: "localhost"
+              value: "10.100.51.161"
         - name: auth
           image: krushnatsalavi/kube-auth
