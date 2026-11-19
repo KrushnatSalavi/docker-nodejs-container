@@ -17,6 +17,7 @@ spec:
           image: krushnatsalavi/kube-user
           env:
             - name: AUTH_ADDRESS
-              value: "10.100.51.161"
+              # value: "10.100.51.161"
+              value: "auth-service.default"
         - name: auth
           image: krushnatsalavi/kube-auth
